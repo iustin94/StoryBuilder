@@ -1,0 +1,8 @@
+baseURL = '/'
+languageCode = 'en-us'
+title = 'QuestForge Editor'
+theme = 'questforge'
+
+[params]
+  description = 'Visual quest editor for Hytale servers'
+  defaultServerUrl = 'http://localhost:7432'

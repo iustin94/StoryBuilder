@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Title }} — QuestForge</title>
+  <link rel="stylesheet" href="/css/editor.css">
+</head>
+<body>
+  <nav id="main-nav">
+    <div class="nav-brand">QuestForge</div>
+    <div class="nav-links">
+      <a href="/" class="nav-link" data-screen="manager">Manager</a>
+      <a href="/editor/" class="nav-link" data-screen="editor">Graph Editor</a>
+      <a href="/settings/" class="nav-link" data-screen="settings">Settings</a>
+    </div>
+    <div class="nav-status">
+      <span id="connection-status" class="status-dot offline" title="Disconnected"></span>
+      <span id="sync-badge" class="sync-badge hidden" title="Pending sync items">0</span>
+    </div>
+  </nav>
+  <main id="app">
+    {{ block "main" . }}{{ end }}
+  </main>
+  <script src="/js/api.js"></script>
+  <script src="/js/offline-queue.js"></script>
+  <script src="/js/manager.js"></script>
+  <script src="/js/graph-editor.js"></script>
+  <script src="/js/settings.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      QuestForgeAPI.init();
+      OfflineQueue.init();
+      Settings.init();
+    });
+  </script>
+</body>
+</html>

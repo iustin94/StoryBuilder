@@ -1,0 +1,45 @@
+{{ define "main" }}
+<div id="editor-screen" class="screen">
+  <div class="editor-layout">
+    <aside id="node-palette" class="node-palette">
+      <h3>Nodes</h3>
+      <div class="palette-item" draggable="true" data-node-type="start">Start</div>
+      <div class="palette-item" draggable="true" data-node-type="dialogue">Dialogue</div>
+      <div class="palette-item" draggable="true" data-node-type="objective">Objective</div>
+      <div class="palette-item" draggable="true" data-node-type="branch">Branch</div>
+      <div class="palette-item" draggable="true" data-node-type="end">End</div>
+      <h3>Variables</h3>
+      <div id="variable-list" class="variable-list"></div>
+      <button id="btn-add-variable" class="btn btn-sm">+ Variable</button>
+    </aside>
+    <div id="canvas-container" class="canvas-container">
+      <div class="canvas-toolbar">
+        <span id="editor-quest-name" class="quest-name">No quest loaded</span>
+        <button id="btn-save-quest" class="btn btn-primary btn-sm">Save to Server</button>
+        <button id="btn-export-json" class="btn btn-sm">Export JSON</button>
+        <button id="btn-import-json" class="btn btn-sm">Import JSON</button>
+        <span class="zoom-controls">
+          <button id="btn-zoom-in" class="btn btn-icon">+</button>
+          <span id="zoom-level">100%</span>
+          <button id="btn-zoom-out" class="btn btn-icon">−</button>
+          <button id="btn-zoom-fit" class="btn btn-icon">Fit</button>
+        </span>
+      </div>
+      <svg id="quest-canvas" class="quest-canvas">
+        <defs>
+          <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+          </marker>
+        </defs>
+        <g id="canvas-group"></g>
+      </svg>
+    </div>
+    <aside id="properties-panel" class="properties-panel">
+      <h3>Properties</h3>
+      <div id="props-content" class="props-content">
+        <p class="hint">Select a node or edge to edit its properties.</p>
+      </div>
+    </aside>
+  </div>
+</div>
+{{ end }}
