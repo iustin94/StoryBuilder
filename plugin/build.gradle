@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+}
+
+dependencies {
+    compileOnly project(':stubs')
+    implementation "com.google.code.gson:gson:${gsonVersion}"
+}
+
+jar {
+    archiveBaseName = 'questforge'
+    archiveVersion = '1.0.0'
+
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}

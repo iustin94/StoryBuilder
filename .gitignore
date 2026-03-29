@@ -1,0 +1,6 @@
+.gradle/
+build/
+site/public/
+site/.hugo_build.lock
+plugin/build/
+stubs/build/
