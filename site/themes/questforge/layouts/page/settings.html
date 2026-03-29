@@ -1,0 +1,37 @@
+{{ define "main" }}
+<div id="settings-screen" class="screen">
+  <div class="settings-container">
+    <h2>Settings</h2>
+    <div class="settings-group">
+      <label for="server-url">Server Address</label>
+      <div class="input-group">
+        <input type="text" id="server-url" placeholder="http://localhost:7432" />
+        <button id="btn-test-connection" class="btn btn-primary">Test Connection</button>
+      </div>
+      <p id="connection-result" class="connection-result"></p>
+    </div>
+    <div class="settings-group">
+      <h3>Offline Queue</h3>
+      <p>Pending operations: <strong id="pending-count">0</strong></p>
+      <button id="btn-sync-now" class="btn">Sync Now</button>
+      <button id="btn-clear-queue" class="btn btn-danger">Clear Queue</button>
+    </div>
+    <div class="settings-group">
+      <h3>API Endpoints Reference</h3>
+      <table class="endpoint-table">
+        <thead><tr><th>Method</th><th>Path</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td>GET</td><td>/questforge/status</td><td>Health check</td></tr>
+          <tr><td>GET</td><td>/questforge/npcs</td><td>List NPC roles</td></tr>
+          <tr><td>GET</td><td>/questforge/quests</td><td>List quests</td></tr>
+          <tr><td>POST</td><td>/questforge/quest</td><td>Save quest</td></tr>
+          <tr><td>DELETE</td><td>/questforge/quest/{id}</td><td>Delete quest</td></tr>
+          <tr><td>POST</td><td>/questforge/assign</td><td>Assign NPC</td></tr>
+          <tr><td>POST</td><td>/questforge/unassign</td><td>Unassign NPC</td></tr>
+          <tr><td>POST</td><td>/questforge/reload</td><td>Hot reload</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{{ end }}

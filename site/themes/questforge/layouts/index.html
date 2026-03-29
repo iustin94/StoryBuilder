@@ -1,0 +1,22 @@
+{{ define "main" }}
+<div id="manager-screen" class="screen active">
+  <div class="manager-layout">
+    <aside id="npc-rail" class="npc-rail">
+      <h2>NPC Roles</h2>
+      <p class="hint">Drag an NPC onto a quest card to assign it.</p>
+      <div id="npc-list" class="npc-list">
+        <div class="loading">Loading NPCs...</div>
+      </div>
+    </aside>
+    <section id="quest-area" class="quest-area">
+      <div class="quest-area-header">
+        <h2>Quests</h2>
+        <button id="btn-new-quest" class="btn btn-primary">+ New Quest</button>
+      </div>
+      <div id="quest-list" class="quest-list">
+        <div class="loading">Loading quests...</div>
+      </div>
+    </section>
+  </div>
+</div>
+{{ end }}
