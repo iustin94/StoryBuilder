@@ -1,0 +1,11 @@
+{
+  "Group": "net.questforge",
+  "Name": "QuestForge",
+  "Version": "1.0.0",
+  "Main": "net.questforge.QuestForgePlugin",
+  "Authors": [{"Name": "BassTurtle"}],
+  "Description": "Visual quest editor and quest engine for Hytale servers.",
+  "Dependencies": {
+    "Hytale:NPC": "*"
+  }
+}

@@ -21,7 +21,7 @@ public class QuestForgeHttpServer {
 
     public QuestForgeHttpServer(int port, QuestManager questManager,
                                 AssignmentConfig assignmentConfig, QuestLoader questLoader) throws IOException {
-        server = HttpServer.create(new InetSocketAddress(port), 0);
+        server = HttpServer.create(new InetSocketAddress("0.0.0.0", port), 0);
         server.createContext("/questforge/status", cors(new StatusHandler(questManager)));
         server.createContext("/questforge/npcs", cors(new NpcsHandler()));
         server.createContext("/questforge/quests", cors(new QuestHandler(questManager, questLoader, assignmentConfig)));

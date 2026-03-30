@@ -22,11 +22,11 @@ const QuestForgeAPI = (() => {
 
   async function request(method, path, body) {
     const url = serverUrl + path;
-    const opts = {
-      method,
-      headers: { 'Content-Type': 'application/json' },
-    };
-    if (body) opts.body = JSON.stringify(body);
+    const opts = { method, headers: {} };
+    if (body) {
+      opts.headers['Content-Type'] = 'application/json';
+      opts.body = JSON.stringify(body);
+    }
     const res = await fetch(url, opts);
     if (!res.ok) {
       const text = await res.text();
@@ -37,17 +37,15 @@ const QuestForgeAPI = (() => {
 
   async function pollStatus() {
     try {
-      const data = await request('GET', '/questforge/status');
+      await request('GET', '/questforge/status');
       if (!connected) {
         connected = true;
         updateStatusDot(true);
         OfflineQueue.flush();
       }
     } catch {
-      if (connected) {
-        connected = false;
-        updateStatusDot(false);
-      }
+      connected = false;
+      updateStatusDot(false);
     }
   }
 
