@@ -1,0 +1,8 @@
+{
+  "Group": "net.questforge.prefabs",
+  "Name": "PrefabBrowser",
+  "Version": "1.0.0",
+  "Main": "net.questforge.prefabs.PrefabBrowserPlugin",
+  "Authors": [{"Name": "BassTurtle"}],
+  "Description": "In-game prefab browser with searchable tree view for creative mode."
+}

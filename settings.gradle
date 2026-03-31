@@ -2,3 +2,4 @@ rootProject.name = 'questforge'
 
 include 'stubs'
 include 'plugin'
+include 'prefab-browser'
